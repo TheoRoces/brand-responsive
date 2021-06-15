@@ -1,0 +1,969 @@
+@font-face {
+    font-family: Swiss;
+    src: url("/Fonts/swiss-721-bold-bt-70711.ttf");
+}
+
+@font-face {
+    font-family: SwissThin;
+    src: url("/Fonts/swiss-721-light-bt.ttf");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: Swiss;
+    /* cursor: url('/SVG/cursor.cur'), pointer; */
+}
+
+a
+{
+    text-decoration: none;
+}
+
+/* -- MENU --- */
+
+.menucontainer
+{
+    visibility: hidden;
+    position: fixed;
+    height: 100Vh;
+    width: 100%;
+    z-index: 100008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-out;
+    -webkit-transition: opacity 0.8s ease-out;
+    /* z-index: 100001;
+    perspective: 1000px; */
+    background-color: rgba(0, 0, 0, 0.438);
+    /* transform: translateZ(1010px);
+    -webkit-transform: translateZ(2210px); */
+} 
+
+.menu
+{
+    position: absolute;
+    height: 94vh;
+    width: 96.75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100001;
+    perspective: 1000px;
+    /* transform: translateZ(1000px);
+    -webkit-transform: translateZ(1000px); */
+}
+
+.menu1
+{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: #fff;
+    height: 94vh;
+    width: 100%;
+    /* transition: visibility 1s ease-in-out;
+    -webkit-transition: visibility 1s ease-in-out; */
+    z-index: 10001;
+    perspective: 1000px;
+    /* transform: translateZ(1000px);
+    -webkit-transform: translateZ(1000px); */
+
+}
+
+.menucontainer.isOpen
+{
+    visibility: visible;
+    /* color: white; */
+}
+
+.menu .cadre
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 94vh;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    z-index: 10000;
+}
+
+/* .menu1 .cadre .left
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 16.27%;
+    height: 60.3vh;
+} */
+
+/* .menu1 .left .top
+{
+    transform: rotate(90deg);
+    font-size: 35px;
+}
+
+.menu1 .cadre .left .bottom
+{
+    transform: rotate(270deg);
+    font-weight: bold;
+    font-family: SwissThin;
+    font-size: 15px;
+}
+
+.menu1 .cadre .left .bottom b
+{
+    font-family: Swiss;
+} */
+
+.menu1 .cadre .center
+{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu1 .cadre .center .centermenuleft
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.menu1 .cadre .center .centermenuleft .home,
+.menu1 .cadre .center .centermenuleft .radio,
+.menu1 .cadre .center .centermenuleft .design,
+.menu1 .cadre .center .centermenuleft .mag,
+.menu1 .cadre .center .centermenuleft .shop
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    border-top: 1px solid black;
+}
+
+.menu1 .cadre .center .centermenuleft .home span,
+.menu1 .cadre .center .centermenuleft .radio span,
+.menu1 .cadre .center .centermenuleft .design span,
+.menu1 .cadre .center .centermenuleft .mag span,
+.menu1 .cadre .center .centermenuleft .shop span
+{
+    font-size: 50px;
+    padding: 10px 0;
+}
+
+.menu1 .cadre .center .centermenuleft .copyright
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+    font-size: 12px;
+    font-family: SwissThin;
+}
+
+.menu1 .cadre .center .centermenuright
+{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.menu1 .cadre .center .centermenuright .follo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+.menu1 .cadre .center .centermenuright .follow
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    padding: 10px 0 20px 0;
+}
+
+.menu1 .cadre .center .centermenuright .follow span
+{
+    font-size: 30px;
+    margin-bottom: 13px;
+}
+
+.menu1 .cadre .center .centermenuright .follow .followicons a
+{
+    color: black;
+    margin-right: 10px;
+}
+
+.menu1 .cadre .center .centermenuright .contact
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    padding: 10px 0 20px 0;
+}
+
+.menu1 .cadre .center .centermenuright .contact .cont
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.menu1 .cadre .center .centermenuright .contact .contacts
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu1 .cadre .center .centermenuright .contact .contacts span
+{
+    margin: 3px 0 3px;
+    font-size: 20px;
+    font-family: SwissThin;
+}
+
+.menu1 .cadre .center .centermenuright .acces
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    padding: 10px 0 20px 0;
+}
+
+.menu1 .cadre .center .centermenuright .acces .access
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.menu1 .cadre .center .centermenuright .acces .accesses
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu1 .cadre .center .centermenuright .acces .accesses span
+{
+    margin: 3px 0 3px;
+    font-size: 20px;
+    font-family: SwissThin;
+}
+
+.menu1 .cadre .right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 12.9%;
+    height: 83vh;
+}
+
+.menu1 .cadre .right .menu-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 65px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu1 .cadre .right .menu-btn .eyeclose
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 40px;
+    border-radius: 50%;
+    border-bottom: 3px solid #000;
+}
+
+/* --- CONTAINER --- */
+
+.containcadre
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #E20000;
+}
+
+/* --- CADRE FIXÉ --- */
+
+.cadre1
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 94vh;
+    width: 96.75%;
+    border: 1px solid #e6e6e6;
+    z-index: 10000;
+}
+
+.cadre1 .left,
+.menu1 .cadre .left
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    height: 90vh;
+}
+
+.cadre1 .left .top,
+.menu1 .cadre .left .top
+{
+    max-width: 5vw;
+    max-height: 30vh;
+}
+
+.cadre1 .left .bottom,
+.menu1 .cadre .left .bottom
+{
+    max-width: 15vw;
+    max-height: 30vh;
+}
+
+/* .cadre1 .left .top
+{
+    transform: rotate(90deg);
+    font-size: 35px;
+}
+
+.cadre1 .left .bottom
+{
+    transform: rotate(270deg);
+    font-weight: bold;
+    font-family: SwissThin;
+    font-size: 15px;
+} */
+
+.cadre1 .left .bottom b
+{
+    font-family: Swiss;
+}
+
+.cadre1 .right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 12%;
+    height: 83vh;
+}
+
+.cadre1 .right .bouttonmenu
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadre1 .right .menu-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 65px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cadre1 .right .menu-btn .eyeopen
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 35px;
+    border-radius: 80%;
+    border: 2px solid #000;
+    background-color: white;
+    overflow: hidden;
+}
+
+.cadre1 .right .menu-btn .eyeopen .eyecircle
+{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.cadre1 .right span
+{
+    font-family: SwissThin;
+}
+
+.cadre1 .right .lateralmenu
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+}
+
+.cadre1 .right .lateralmenu a
+{
+    color: black;
+    /* font-family: SwissThin; */
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+/* --- PAGE 1 --- */
+
+.cadre2
+{
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    height: 80vh;
+    /* background-color: #fff; */
+    width: 78%;
+    z-index: 1;
+}
+
+.cadre2 .leftcenter
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadre2 .leftcenter img
+{
+    width: 800px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.cadre2 .leftcenter span
+{
+    color: white;
+    font-family: SwissThin;
+    cursor: pointer;
+}
+
+.cadre2 .leftcenter span i
+{
+    font-size: 12px;
+}
+
+.cadre2 .right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cadre2 .right img
+{
+    width: 100px;
+}
+
+.cadre2 .right .check
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 150px;
+    border: 1px solid white;
+}
+
+.cadre2 .right .check span
+{
+    color: white;
+}
+
+/* --- PAGE 2 --- */
+
+.cadre3
+{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+}
+
+.cadre3 .cadre
+{
+    display: flex;
+    justify-content: space-evenly;
+    height: 80vh;
+    /* background-color: #fff; */
+    width: 78%;
+    z-index: 1;
+    position: sticky;
+    bottom: 0;
+    opacity: 0;
+}
+
+
+/* --- PAGE 3 --- */
+
+.cadre4
+{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: #43C902;
+    z-index: 1001;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadre4 .cadrebox3
+{
+    display: flex;
+    justify-content: space-evenly;
+    height: 80vh;
+    /* background-color: #fff; */
+    width: 78%;
+    z-index: 100000000000;
+    position: sticky;
+    top: 0;
+    opacity: 0;
+    transition: all 3s ease-out;
+    transform: translateY(50px);
+}
+
+/* --- PAGE 4 --- */
+
+.cadre5
+{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    z-index: 100100;
+    background-color: #e2c6cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/1x/mockupFichier\ 19.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* --- FOOTER --- */
+
+.cadre6
+{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadre6 .left
+{
+    width: 20%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-right: 1px solid black;
+    padding: 20px 30px 0;
+}
+
+.cadre6 .left .contact
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 20px 0;
+}
+
+.cadre6 .left .contact .cont
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.cadre6 .left .contact .contacts
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.cadre6 .left .contact .contacts span
+{
+    margin: 3px 0 3px;
+    font-size: 20px;
+    font-family: SwissThin;
+}
+
+.cadre6 .left .acces
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 20px 0;
+}
+
+.cadre6 .left .acces .access
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.cadre6 .left .acces .accesses
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.cadre6 .left .acces .accesses span
+{
+    margin: 3px 0 3px;
+    font-size: 20px;
+    font-family: SwissThin;
+}
+
+.cadre6 .right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex;
+    height: 80vh;
+    width: 40%;
+}
+
+
+.cadre6 .right .follo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+.cadre6 .right .follow
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 20px 0;
+}
+
+.cadre6 .right .follow span
+{
+    font-size: 60px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid black;
+    padding-left: 50px;
+}
+
+.cadre6 .right .follow .followicons
+{
+    padding: 30px 0 0 50px;
+}
+
+.cadre6 .right .follow .followicons a
+{
+    color: black;
+    margin-right: 10px;
+}
+
+.cadre6 .right .invi
+{
+    height: 50%;
+}
+
+
+/* --- POUPÉE RUSSE --- */
+
+.scene {
+    height: 100vh;
+    width: 100vw;
+    background: #eaeaea;
+    /* background: white; */
+    position: relative;
+    z-index: 9999;
+  }
+
+  .viewer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: 375px;
+    width: 375px;
+    background-image: url(ressources/gifsplit.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+  
+  .viewer.frame1 {
+    background-position: -480px 0;
+  }
+  
+  .viewer.frame2 {
+    background-position: -960px 0;
+  }
+  
+  .viewer.frame3 {
+    background-position: -1440px 0;
+  }
+  
+  .viewer.frame4 {
+    background-position: -1920px 0;
+  }
+  
+  .viewer.frame5 {
+    background-position: -2400px 0;
+  }
+  
+  .viewer.frame6 {
+    background-position: -2880px 0;
+  }
+  
+  .viewer.frame7 {
+    background-position: -3360px 0;
+  }
+  
+  .viewer.frame8 {
+    background-position: -3840px 0;
+  }
+  
+  .viewer.frame9 {
+    background-position: -4320px 0;
+  }
+  
+  .viewer.frame10 {
+    background-position: -4800px 0;
+  }
+  
+  .viewer.frame11 {
+    background-position: -5280px 0;
+  }
+  
+  .viewer.frame12 {
+    background-position: -5760px 0;
+  }
+  
+  .viewer.frame13 {
+    background-position: -6240px 0;
+  }
+  
+  .viewer.frame14 {
+    background-position: -6720px 0;
+  }
+  
+  .viewer.frame15 {
+    background-position: -7200px 0;
+  }
+
+
+
+
+/* --- ANIMATION --- */
+
+.cadrebox1
+{
+    opacity: 0;
+    transform: translateY(-50px);
+
+    transition: all 3s ease-out;
+}
+
+.cadrebox1.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cadrebox2
+{
+    opacity: 0;
+    transition: all 3s ease-out;
+}
+
+.cadrebox2.show {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+.cadrebox3.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@media (max-width: 1225px) {
+    .cadrebox1 .leftcenter img
+    {
+        max-width: 50vw;
+    }
+
+    .cadrebox1 .right img
+    {
+        max-width: 20vw;
+    }
+}
+
+@media (max-width: 780px) {
+    .cadre6 .right .follow .followicons
+    {
+        font-size: 10px;
+    }
+}
+@media (max-width: 730px) {
+    .cadre1 .right .lateralmenu
+    {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .cadre .center .centermenuright
+    {
+        display: none !important;
+    } 
+
+    .cadrebox1
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+    }
+
+    .cadrebox1 .leftcenter img
+    {
+        max-width: 60vw;
+    }
+
+    .cadrebox1 .right img
+    {
+        max-width: 30vw;
+    }
+
+    .cadre1 .left
+    {
+        align-items: flex-start;
+        width: 30vw;
+    }
+
+    .cadre1 .right,
+    .menu1 .cadre .right 
+    {
+        align-items: flex-end;
+        width: 30vw;
+        padding-right: 10px;
+    }
+
+    .cadrebox2
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cadre3 .cadre img,
+    .cadre4 img
+    {
+        width: 55vw !important;
+    }
+
+    .cadrebox3
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .cadre6 .right .follow span
+    {
+        font-size: 40px;
+        padding-left: 20px;
+    }
+
+    .cadre6 .right .follow .followicons
+    {
+        font-size: 10px;
+        padding-left: 20px;
+    }
+}
+
+
+@media (max-width: 510px) {
+
+    .cadre6 .left .contact .cont,
+    .cadre6 .left .acces .access
+    {
+        font-size: 20px;
+    }
+
+    .cadre6 .left .contact .contacts span,
+    .cadre6 .left .acces .accesses span
+    {
+        font-size: 10px;
+    }
+
+    .cadre6 .right .follow .followicons
+    {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .cadre6 .right .follow .followicons a
+    {
+        margin-right: 5px;
+    }
+}
